@@ -2,10 +2,11 @@ import  React from 'react';
 import  TodoListItem from './todo-list-item';
 const TodoList = ({todos})=>{
     const elements = todos.map((item)=>{
+        const {id, ...rest}= item;
         return (
-            <li>
+            <li key={id}>
                 <TodoListItem
-                    {...item}
+                    {...rest}
                 />
             </li>
         );
