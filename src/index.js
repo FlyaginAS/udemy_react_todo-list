@@ -7,15 +7,16 @@ import  TodoList from './components/todo-list';
 
 
 const App = ()=>{
-    const isLoggedIn = true;
-    const loginBox = <span>Log in please</span>;
-    const welcomeBox = <span>Welcome back</span>
+    const  todoData = [
+        {label: 'Drink Coffee', important: false},
+        {label:'Make awesome app', important: true},
+        {label:'have a lunch', important: false}
+    ];
     return (
         <div>
-            {isLoggedIn ? welcomeBox : loginBox}
             <AppHeader/>
             <SearchPanel/>
-            <TodoList/>
+            <TodoList todos={todoData}/>
         </div>
     );
 };
